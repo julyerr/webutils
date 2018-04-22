@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+
+    <typeAliases>
+        <package name="com.julyerr.mybatis.model"/>
+        <!--<typeAlias alias="User" type="com.julyerr.interviews.sql.mybatis.po.User"/>-->
+    </typeAliases>
+
+    <!-- Continue editing here -->
+    <!--如果使用spring，该配置交由sprig负责-->
+    <environments default="development">
+        <environment id="development">
+            <!-- 使用jdbc事务管理，目前由mybatis来管理 -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据库连接池，目前由mybatis来管理 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/demo"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <package name="com.julyerr.mybatis.mapper"/>
+    </mappers>
+
+
+</configuration>
